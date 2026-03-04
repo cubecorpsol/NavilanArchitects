@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decode Architects</title>
+  <link rel="icon" type="img" href="logo.png" />
+  <link rel="stylesheet" href="stylesheet.css" />
+  <style>
+    /* DESKTOP NAVIGATION */
+    #navigation > div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    #li {
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    #lg {
+      margin-left: auto;
+    }
+
+    #row1 {
+      margin-bottom: 11px;
+    }
+    .col1{
+    height: 100%;
+  }
+
+
+    /* DARK HOVER EFFECT + CENTERED TITLE */
+    .img-hover {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    .img-hover img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: 0.3s ease;
+    }
+
+    .img-hover::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .img-hover::before {
+      content: attr(title);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .img-hover:hover::before,
+    .img-hover:hover::after {
+      opacity: 1;
+    }
+    
+
+    /* DESKTOP IMAGE STYLES */
+    @media screen and (min-width: 769px) {
+      #Images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 11px;
+      }
+
+      #row1 {
+        display: flex;
+        justify-content: flex-start;
+        gap: 11px;
+        margin-bottom: 11px;
+      }
+
+      #side {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      #Images img {
+        width: 100%;
+        max-width: 680px;
+        min-width: 320px;
+        height: auto;
+        object-fit: cover;
+        display: block;
+      }
+
+      #Images > a,
+      #row1 > a,
+      #row1 > div {
+        display: flex;
+        justify-content: center;
+      }
+
+      .col1 > #side img {
+        height: calc(100%);
+        object-fit: cover;
+      }
+
+      .col1 {
+        width: 100%;
+        max-width: 1360px;
+        min-width: 768px;
+      }
+
+      .col1 > .col2 {
+        height: calc(100%);
+      }
+
+      .col1 > div:first-child {
+        flex: 1;
+        max-width: 50%;
+        height:calc()
+      }
+
+      .col1 > #side {
+        flex: 1;
+        max-width: 50%;
+      }
+
+      .col1 img {
+        height: 100%;
+        object-fit: cover;
+      }
+      .col3{
+        height: calc(350%);
+      }
+      .col2{
+        height:80%;
+      }
+    }
+
+    /* HAMBURGER ICON (Mobile only) */
+    #hamburger {
+      display: none;
+      font-size: 30px;
+      text-align: center;
+      padding: 10px 0;
+      cursor: pointer;
+    }
+
+    /* MOBILE MENU */
+    #mobile-menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+    }
+
+    #mobile-menu a,
+    #mobile-menu div {
+      padding: 10px;
+      text-align: center;
+      color: black;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    #mobile-menu .active {
+      color: red;
+    }
+
+    /* MOBILE IMAGE STYLES */
+    @media (max-width: 768px) {
+      #navigation > div {
+        display: none;
+      }
+
+      #hamburger {
+        display: block;
+      }
+
+      #mobile-menu.show {
+        display: flex;
+      }
+
+      #Images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+      #row1,
+      #side {
+        flex-direction: column;
+        align-items: center;
+        width: 100% !important;
+      }
+
+      #Images img {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100%;
+        margin-bottom: 11px;
+      }
+
+      #Images > a,
+      #side > a,
+      #row1 > div,
+      #row1 > a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      #Copyright {
+        margin-left: 20%;
+      }
+      .col2{
+        display: block;
+      }
+
+    }
+    @media (min-width:768px and max-width:1025px;){
+       .col2 >{
+        height: 220%;
+       }
+      
+    }
+
+
+  </style>
+</head>
+<body style="font-family: sans-serif;">
+
+  <!-- Desktop Navigation -->
+  <section id="navigation">
+    <div>
+      <a href="homepage.html"><div id="li">DECODE</div></a>
+      <div id="li" style="color: red;">WORK</div>
+      <a href="STUDIO.html"><div id="li">STUDIO</div></a>
+      <a href="Get in touch.html"><div id="li">GET IN TOUCH</div></a>
+      <div id="lg"><img src="logoblack.png" height="55px" width="55px"></div>
+    </div>
+  </section>
+
+  <!-- Hamburger (mobile only) -->
+  <div id="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Mobile Nav -->
+  <div id="mobile-menu">
+    <a href="homepage.html">DECODE</a>
+    <div class="active">WORK</div>
+    <a href="STUDIO.html">STUDIO</a>
+    <a href="Get in touch.html">GET IN TOUCH</a>
+  </div>
+
+  <!-- IMAGES SECTION -->
+  <div id="Images">
+    <div id="row1" class="col1">
+      <div class="col2">
+        <a href="nallampatty-residence.html">
+          <span class="img-hover" title="Nallampatty Residence">
+            <img src="Nallampatty residence/2.jpg" alt="Nallampatty Residence" style="height: 899px;"/>
+          </span>
+        </a>
+      </div>
+      <div id="side"style="height:100%">
+        <a href="Mr sanmuga sundaram residencies.html">
+          <span class="img-hover" title="Mr sanmuga sundaram residence">
+            <img src="Mr sanmuga sundaram residence/01.jpg" style="margin-bottom: 11px; height: 400px" alt="Mr sanmuga sundaram residence" />
+          </span>
+        </a>
+        <a href="breathegym.html" class="col3" >
+          <span class="img-hover" title="breathegym" >
+            <img src="04-Breathe Gym/01.jpg" alt="breathegym" style="height: 470px"/>
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div id="row1">
+      <div id="side">
+        <a href="mr balu.html">
+          <span class="img-hover" title="Mr balu residence">
+            <img src="Mr balu residence/01.jpeg" alt="Mr balu residence" />
+          </span>
+        </a>
+        <a href="residence interior for loganathan.html">
+          <span class="img-hover" title="Residence Interior for Mr.Loganathan">
+            <img src="05-Residence Interior for Mr.Loganathan/01.jpg" alt="Residence Interior for Mr.Loganathan" />
+          </span>
+        </a>
+      </div>
+      <a href="residence for loganathan2.html">
+        <span class="img-hover" title="Residence Interior for Mr.Loganathan 2">
+          <img src="06-Residence Interior For Mr.Loganathan/01.jpg" alt="Residence Interior for Mr.Loganathan 2" />
+        </span>
+      </a>
+    </div>
+
+    <div id="row1">
+      <a href="pragadeesh residence.html">
+        <span class="img-hover" title="Mr.Pragadeesh Residence">
+          <img src="07-Mr.Pragadeesh Residence/01.jpg" alt="Mr.Pragadeesh Residence" />
+        </span>
+      </a>
+      <a href="proposed interior for mr selvakumar.html">
+        <span class="img-hover" title="Proposed Interior for Mr.Selvakumar">
+          <img src="08-Proposed Interior for Mr.Selvakumar/01.jpg" alt="Proposed Interior for Mr.Selvakumar" />
+        </span>
+      </a>
+    </div>
+
+    <div id="row1">
+      <a href="proposed interior for mr selvakumar2.html">
+        <span class="img-hover" title="Proposed Interior for Mr.Selvakumar 2">
+          <img src="09-Proposed Interior for Mr.Selvakumar/01.jpg" alt="Proposed Interior for Mr.Selvakumar 2" />
+        </span>
+      </a>
+      <a href="proposed interior for mr loganathan.html">
+        <span class="img-hover" title="Proposed Interior for Mr.loganathan">
+          <img src="10-Proposed Interior for Mr.loganathan/01.jpg" alt="Proposed Interior for Mr.loganathan" />
+        </span>
+      </a>
+    </div>
+
+    <div id="row1">
+      <a href="proposed interior for mr loganathan2.html">
+        <span class="img-hover" title="Proposed Interior for Mr.loganathan 2">
+          <img src="11-Proposed Interior for Mr.loganathan/01.png" alt="Proposed Interior for Mr.loganathan 2" />
+        </span>
+      </a>
+      <a href="mr rajesh residency.html">
+        <span class="img-hover" title="Mr.Rajesh Residence">
+          <img src="12-Mr.Rajesh Residence/01.jpg" alt="Mr.Rajesh Residence" />
+        </span>
+      </a>
+    </div>
+
+    <div id="row1">
+      <a href="proposed interior for mr rajesh.html">
+        <span class="img-hover" title="Proposed Interior for Mr.Rajesh">
+          <img src="13-Proposed Interior For Mr.Rajesh/01.jpg" alt="Proposed Interior for Mr.Rajesh" />
+        </span>
+      </a>
+      <a>
+        <img src="logoblack.png" />
+      </a>
+    </div>
+  </div>
+
+  <div>
+    <footer style="margin-left:5%">
+      <p id="Copyright">Ⓒ Copyright 2025 DECODE. All rights reserved.</p>
+    </footer>
+
+    <!-- SOCIAL ICONS -->
+    <div id="icon" style="margin-top: 2px">
+      <a href="https://www.gmail.com/">
+        <img src="email.png" width="30px" height="30px" style="margin-right:3px;" />
+      </a>
+      <a href="https://www.facebook.com/">
+        <img src="facebook.png" width="30px" height="30px" style="margin-right:3px;" />
+      </a>
+      <a href="https://www.instagram.com/">
+        <img src="instagram.png" width="30px" height="30px" style="margin-right:3px;" />
+      </a>
+      <a href="https://www.linkedin.com/">
+        <img src="linkedin.png" width="35px" height="35px" />
+      </a>
+    </div>
+  </div>
+
+  <p class="cube" style="margin-left: 25%;">Developed by <a href="https://www.cubecorpsol.com/">Cube Corpsol</a></p>
+
+  <!-- JS for hamburger -->
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

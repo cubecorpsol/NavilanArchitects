@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="stylesheet.css">
+
+  <style>
+    /* MOBILE ONLY */
+    @media (max-width: 768px) {
+      #navigation > div {
+        display: none;
+      }
+
+      #hamburger {
+        display: block;
+        text-align: center;
+        font-size: 30px;
+        padding: 10px 0;
+        cursor: pointer;
+      }
+
+      #mobile-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        width: 100%;
+      }
+
+      #mobile-menu.show {
+        display: flex;
+      }
+
+      #mobile-menu a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        padding: 10px;
+      }
+
+      #mobile-menu a.active {
+        color: red;
+      }
+
+      .mobile-images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .mobile-images img {
+        width: 90%;
+        height: auto;
+        margin: 10px 0;
+      }
+    }
+
+    /* DESKTOP ONLY */
+    @media (min-width: 769px) {
+      #hamburger,
+      #mobile-menu {
+        display: none;
+      }
+
+      #navigation > div {
+        display: flex;
+        align-items: center;
+        margin-left: 35px;
+        margin-top: 20px;
+      }
+
+      #li {
+        margin-right: 30px;
+        font-weight: bold;
+      }
+
+      #lg {
+        margin-left: auto;
+        margin-right: 40px;
+      }
+
+      #show {
+        margin: 15px;
+      }
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</head>
+
+<body class="show">
+
+  <!-- Desktop Navigation -->
+  <section id="navigation">
+    <div>
+      <a href="homepage.html"><div id="li">DECODE</div></a>
+      <a href="Work.html"><div id="li" style="color: red;">WORK</div></a>
+      <a href="STUDIO.html"><div id="li">STUDIO</div></a>
+      <a href="Get in touch.html"><div id="li">GET IN TOUCH</div></a>
+      <div id="lg"><img src="logoblack.png" height="39px" width="50px"></div>
+    </div>
+  </section>
+
+  <!-- Hamburger (Mobile Only) -->
+  <div id="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu">
+    <a href="homepage.html">DECODE</a>
+    <a href="Work.html" class="active">WORK</a>
+    <a href="STUDIO.html">STUDIO</a>
+    <a href="Get in touch.html">GET IN TOUCH</a>
+  </div>
+
+  <!-- Image Gallery -->
+  <div class="mobile-images">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/01.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/2.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/3.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/4.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/5.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/6.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/7.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/8.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/9.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/10.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/11.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/12.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/13.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/14.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/15.jpg" height="400px" width="400px">
+    <img id="show" src="05-Residence Interior for Mr.Loganathan/16.jpg" height="400px" width="400px">
+  </div>
+
+</body>
+</html>

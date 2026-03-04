@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="stylesheet.css">
+
+  <style>
+    /* --- Mobile Layout --- */
+    @media (max-width: 768px) {
+      #navigation > div {
+        display: none;
+      }
+
+      #hamburger {
+        display: block;
+        font-size: 30px;
+        text-align: center;
+        cursor: pointer;
+        padding: 10px 0;
+      }
+
+      #mobile-menu {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        width: 100%;
+      }
+
+      #mobile-menu.show {
+        display: flex;
+      }
+
+      #mobile-menu a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 0;
+        font-weight: bold;
+      }
+
+      #mobile-menu a.active {
+        color: red;
+      }
+
+      .mobile-images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .mobile-images img {
+        width: 90%;
+        height: auto;
+        margin: 10px 0;
+      }
+    }
+
+    /* --- Desktop Layout --- */
+    @media (min-width: 769px) {
+      #hamburger,
+      #mobile-menu {
+        display: none;
+      }
+
+      #navigation > div {
+        display: flex;
+        align-items: center;
+        margin-left: 35px;
+        margin-top: 20px;
+      }
+
+      #li {
+        margin-right: 30px;
+        font-weight: bold;
+      }
+
+      #lg {
+        margin-left: auto;
+        margin-right: 40px;
+      }
+
+      .mobile-images {
+        margin-left: 35px;
+        margin-top: 50px;
+      }
+
+      #show {
+        margin-right: 15px;
+      }
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("show");
+    }
+  </script>
+</head>
+
+<body class="show">
+
+  <!-- Desktop Navigation -->
+  <section id="navigation">
+    <div>
+      <a href="homepage.html"><div id="li">DECODE</div></a>
+      <a href="Work.html"><div id="li" style="color: red;">WORK</div></a>
+      <a href="STUDIO.html"><div id="li">STUDIO</div></a>
+      <a href="Get in touch.html"><div id="li">GET IN TOUCH</div></a>
+      <div id="lg"><img src="logoblack.png" height="39px" width="50px"></div>
+    </div>
+  </section>
+
+  <!-- Hamburger (Mobile Only) -->
+  <div id="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu">
+    <a href="homepage.html">DECODE</a>
+    <a href="Work.html" class="active">WORK</a>
+    <a href="STUDIO.html">STUDIO</a>
+    <a href="Get in touch.html">GET IN TOUCH</a>
+  </div>
+
+  <!-- Images -->
+  <div class="mobile-images">
+    <img id="show" src="13-Proposed Interior For Mr.Rajesh/01.jpg" height="400px" width="400px">
+    <img id="show" src="13-Proposed Interior For Mr.Rajesh/02.jpg" height="400px" width="400px">
+    <img id="show" src="13-Proposed Interior For Mr.Rajesh/3.jpg" height="400px" width="400px">
+  </div>
+
+</body>
+</html>

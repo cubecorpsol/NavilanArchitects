@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decode Architects</title>
+  <link rel="icon" type="img" href="logo.png">
+  <link rel="stylesheet" href="stylesheet.css" />
+
+  <style>
+    /* Navigation base style (desktop) */
+    #navigation > .nav-desktop {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 10px;
+    }
+
+    #li {
+      margin: 10px;
+      font-weight: bold;
+      color: black;
+    }
+
+    .active {
+      color: red !important;
+    }
+
+    #lg {
+      margin-left: auto;
+    }
+
+    /* Hide hamburger and mobile nav in desktop */
+    .hamburger,
+    .mobile-nav {
+      display: none;
+    }
+
+    #map p {
+      line-height: 1.6;
+    }
+
+    /* === DESKTOP & TABLET FLEX UPDATE (NO LAYOUT CHANGE) === */
+    @media (min-width: 769px) {
+      #map {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2vw; /* Responsive gap */
+        padding: 2vw 5vw; /* Responsive padding */
+      }
+
+      #map iframe {
+        flex-shrink: 0;
+        width: 60vw; /* Responsive width */
+        max-width: 900px;
+        height: 450px;
+      }
+
+      #map p {
+        text-align: center;
+        margin-left: auto;
+        margin-right: 10px;
+        position: relative;
+      }
+
+      #map span#bold {
+        display: block;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cube {
+        text-decoration: none;
+        margin-left: 25%;
+      }
+
+      footer {
+        margin-left: 25%;
+      }
+
+      #icon {
+        margin-left: 25%;
+        margin-top: 20px;
+      }
+    }
+
+    /* === MOBILE ONLY STYLES === */
+    @media (max-width: 768px) {
+      #navigation > .nav-desktop {
+        display: none;
+      }
+
+      .cube {
+        text-decoration: none;
+        font-size: 12px;
+        margin-left: 25%;
+        margin-top: -2%;
+      }
+
+      #footer {
+        margin-left: 20%;
+      }
+
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        margin: auto;
+        margin-top: 10px;
+      }
+
+      .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: black;
+        margin: 3px 0;
+      }
+
+      .mobile-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: white;
+        padding: 10px;
+      }
+
+      .mobile-nav a {
+        text-decoration: none;
+        margin: 5px 0;
+        font-weight: bold;
+        color: black;
+      }
+
+      .mobile-nav a.active {
+        color: red !important;
+      }
+
+      .mobile-nav.show {
+        display: flex;
+      }
+
+      #map {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #map > div {
+        margin: 20px 10px;
+        text-align: center;
+      }
+
+      #map p {
+        margin: 10px auto;
+        text-align: center;
+      }
+
+      iframe {
+        width: 100% !important;
+        height: auto;
+      }
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("mobileNav");
+      nav.classList.toggle("show");
+    }
+  </script>
+</head>
+
+<body style="font-family: sans-serif;">
+  <section id="navigation">
+    <!-- DESKTOP NAVIGATION -->
+    <div class="nav-desktop">
+      <a href="homepage.html"><div id="li">DECODE</div></a>
+      <a href="Work.html"><div id="li">WORK</div></a>
+      <a href="STUDIO.html"><div id="li">STUDIO</div></a>
+      <div id="li" class="active">GET IN TOUCH</div>
+      <div id="lg">
+        <img src="logoblack.png" height="55px" width="55px" />
+      </div>
+    </div>
+
+    <!-- HAMBURGER (Mobile Only) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- MOBILE DROPDOWN MENU -->
+    <div id="mobileNav" class="mobile-nav">
+      <a href="homepage.html">DECODE</a>
+      <a href="Work.html">WORK</a>
+      <a href="STUDIO.html">STUDIO</a>
+      <a href="#" class="active">GET IN TOUCH</a>
+    </div>
+  </section>
+
+  <div id="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1632.507645211798!2d77.6888364!3d11.3415766!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba96f00093b6437%3A0xa8d70830972bf9a9!2sVasantham%20enterprises!5e1!3m2!1sen!2sin!4v1753620049060!5m2!1sen!2sin"
+      width="900"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+
+    <div>
+      <p>
+        <span id="bold">ADDRESS</span><br />
+        126, Nasiyanur rd, Bharathiyar Nagar,<br />
+        Vettukaatuvalasu, Erode, 638011.
+      </p>
+      <br />
+      <p>
+        <span id="bold">For Enquiries</span><br />
+        +91 6381 232 237 &nbsp;&nbsp;&nbsp; contact@decodeartechitecs.in
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <p id="Copyright">Ⓒ Copyright 2025 DECODE. All rights reserved.</p>
+  </footer>
+
+  <div id="icon">
+    <a href="https://www.gmail.com/">
+      <img src="email.png" width="30px" height="30px" style="margin-right:3px;" />
+    </a>
+    <a href="https://www.facebook.com/">
+      <img src="facebook.png" width="30px" height="30px" style="margin-right:3px;" />
+    </a>
+    <a href="https://www.instagram.com/">
+      <img src="instagram.png" width="30px" height="30px" style="margin-right:3px;" />
+    </a>
+    <a href="https://www.linkedin.com/">
+      <img src="linkedin.png" width="35px" height="35px" />
+    </a>
+  </div>
+
+  <p class="cube">Developed by <a href="https://www.cubecorpsol.com/">Cube Corpsol</a></p>
+</body>
+</html>

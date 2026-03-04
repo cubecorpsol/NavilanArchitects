@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Decode Architects</title>
+    <link rel="icon" type="img" href="logo.png">
+  <link rel="stylesheet" href="stylesheet.css" />
+  <style>
+    /* Desktop Navigation */
+    #navigation > div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    #li {
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    #lg {
+      margin-left: auto;
+    }
+
+    /* Hamburger (Hidden on Desktop) */
+    #hamburger {
+      display: none;
+      font-size: 30px;
+      text-align: center;
+      padding: 10px 0;
+      cursor: pointer;
+    }
+
+    /* Mobile Menu */
+    #mobile-menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+    }
+
+    #mobile-menu a,
+    #mobile-menu div {
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      color: black;
+    }
+
+    #mobile-menu div {
+      color: red;
+    }
+
+    @media (max-width: 768px) {
+      #navigation > div {
+        display: none;
+      }
+
+      #hamburger {
+        display: block;
+      }
+
+      #mobile-menu.show {
+        display: flex;
+      }
+
+      /* Icon alignment */
+      #icon {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 20px;
+      }
+
+      #icon img {
+        width: 35px;
+        height: 35px;
+      }
+
+      /* Studio content spacing */
+      #std {
+        padding: 20px;
+        text-align: center;
+      }
+
+      #std p {
+        line-height: 1.5;
+        font-size: 16px;
+      }
+
+      h3 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Desktop Navigation -->
+  <section id="navigation">
+    <div>
+      <a href="homepage.html"><div id="li">DECODE</div></a>
+      <a href="Work.html"><div id="li">WORK</div></a>
+      <div id="li" style="color: red;">STUDIO</div>
+      <a href="Get in touch.html"><div id="li">GET IN TOUCH</div></a>
+      <div id="lg"><img src="logoblack.png" height="55px" width="55px" /></div>
+    </div>
+  </section>
+
+  <!-- Hamburger Button -->
+  <div id="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu">
+    <a href="homepage.html">DECODE</a>
+    <a href="Work.html">WORK</a>
+    <div>STUDIO</div>
+    <a href="Get in touch.html">GET IN TOUCH</a>
+  </div>
+
+  <!-- Studio Content -->
+  <section id="std" style="font-family: sans-serif;">
+    <h3>STUDIO</h3>
+    <p>
+      At <span id="bold">DecodeArchitecture</span>, we believe that architecture is more than just building—it's about creating meaningful spaces that inspire, function, and endure. Founded by <span id="bold">Ram Kishore</span>, an architect who completed his Bachelor of Architecture in 2018, our studio is driven by a shared passion for bold ideas, thoughtful design, and precise execution.
+      <br /><br />
+      From the first sketch to the final execution, we collaborate closely with the client to bring their visions to life. Our work ranges from residential and commercial to interior design.
+      <br /><br />
+      With a keen eye for detail and an open mind for experimentation, we aim to decode complex design challenges into simple, elegant solutions that are both innovative and practical.
+    </p>
+    <p id="bold">We don't just design spaces—we craft experiences</p>
+    <br />
+    <p id="bold">VACANCY</p>
+    <br />
+    <p>For Available position—<a href="">Click here</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer style="margin-left: 5%;">
+    <p id="Copyright">Ⓒ Copyright 2025 DECODE. All rights reserved.</p>
+  </footer>
+
+  <!-- Social Icons -->
+  <div id="icon">
+    <a href="https://www.gmail.com/">
+      <img src="email.png" width="30px" height="30px" style="margin-right:3px;" />
+    </a>
+    <a href="https://www.facebook.com/">
+      <img src="facebook.png" width="30px" height="30px" style="margin-right:3px;" />
+    </a>
+    <a href="https://www.instagram.com/">
+      <img src="instagram.png" width="30px" height="30px" style="margin-right:3px;" />
+    </a>
+    <a href="https://www.linkedin.com/">
+      <img src="linkedin.png" width="35px" height="35px" />
+    </a>
+  </div>
+    <p class="cube" style="margin-left: 25%;">Developed by <a href="https://www.cubecorpsol.com/">Cube Corpsol</a></p>
+
+  <!-- Hamburger Menu JS -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobile-menu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

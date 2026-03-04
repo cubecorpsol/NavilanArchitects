@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WORK</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <style>
+    /* DESKTOP NAVIGATION */
+    #navigation > div {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    #li {
+      margin: 10px;
+      font-size: 18px;
+    }
+
+    #lg {
+      margin-left: auto;
+    }
+
+    /* HAMBURGER ICON (MOBILE) */
+    #hamburger {
+      display: none;
+      font-size: 30px;
+      text-align: center;
+      padding: 10px 0;
+      cursor: pointer;
+    }
+
+    /* MOBILE MENU */
+    #mobile-menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      background-color: white;
+    }
+
+    #mobile-menu a, #mobile-menu div {
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* IMAGE STYLE DEFAULT (DESKTOP) */
+    .show {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 10px;
+    }
+
+    #show {
+      height: 400px;
+      width: 400px;
+    }
+@media (max-width: 768px) {
+  /* Hide desktop navigation */
+  #navigation > div {
+    display: none;
+  }
+
+  /* Hamburger menu centered */
+  #hamburger {
+    display: block;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    padding: 10px 0;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+  }
+
+  /* Mobile menu visible when toggled */
+  #mobile-menu.show {
+    display: flex;
+  }
+
+  /* Mobile menu styling */
+  #mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  #mobile-menu a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  #mobile-menu a.active {
+    color: red;
+  }
+
+  /* Images stack vertically and center-aligned */
+  #Images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  #row1, #side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #Images img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Icons aligned horizontally */
+  #icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  #icon a {
+    margin: 5px;
+  }
+
+
+      /* CENTER NAV MENU AND IMAGES IN MOBILE */
+      #mobile-menu {
+        align-items: center;
+        text-decoration: none;
+        color: black;
+      }
+
+      body.show {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* vertical centering */
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .show {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #show {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100%;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="show">
+  <!-- NAVIGATION -->
+  <section id="navigation">
+    <div >
+      <a href="homepage.html"><div id="li">DECODE</div></a>
+      <a href="Work.html"><div id="li" style="color: red;">WORK</div></a>
+      <a href="STUDIO.html"><div id="li">STUDIO</div></a>
+      <a href="Get in touch.html"><div id="li">GET IN TOUCH</div></a>
+      <div id="lg"><img src="logoblack.png" height="39px" width="50px"></div>
+    </div>
+  </section>
+
+  <!-- Hamburger Icon -->
+  <div id="hamburger" onclick="toggleMenu()">☰</div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu">
+    <a href="homepage.html">DECODE</a>
+    <a href="Work.html"><div style="color: red;">WORK</div></a>
+    <a href="STUDIO.html">STUDIO</a>
+    <a href="Get in touch.html">GET IN TOUCH</a>
+  </div>
+
+  <!-- IMAGE GALLERY -->
+  <div>
+    <img id="show" src="04-Breathe Gym/01.jpg">
+    <img id="show" src="04-Breathe Gym/2.jpg">
+    <img id="show" src="04-Breathe Gym/3.jpg">
+    <img id="show" src="04-Breathe Gym/4.jpg">
+    <img id="show" src="04-Breathe Gym/5.jpg">
+    <img id="show" src="04-Breathe Gym/6.jpg">
+    <img id="show" src="04-Breathe Gym/7.jpg">
+    <img id="show" src="04-Breathe Gym/8.jpg">
+    <img id="show" src="04-Breathe Gym/9.jpg">
+    <img id="show" src="04-Breathe Gym/10.jpg">
+    <img id="show" src="04-Breathe Gym/11.jpg">
+  </div>
+
+  <!-- JS for Hamburger -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobile-menu").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
