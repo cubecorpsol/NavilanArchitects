@@ -80,6 +80,17 @@
       opacity: 1;
     }
 
+    @keyframes mobileTitleReveal {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .logo-panel {
       display: flex;
       align-items: center;
@@ -246,6 +257,45 @@
     @media (max-width: 768px) {
       #navigation > div {
         display: none;
+      }
+
+      /* On touch devices, keep project labels visible instead of hover-only */
+      .img-hover {
+        width: 100%;
+      }
+
+      .img-hover::after {
+        opacity: 1;
+        inset: auto 0 0 0;
+        height: 34%;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+      }
+
+      .img-hover::before {
+        opacity: 1;
+        top: auto;
+        bottom: 10px;
+        left: 12px;
+        right: auto;
+        transform: none;
+        width: max-content;
+        max-width: calc(100% - 24px);
+        white-space: normal;
+        font-size: clamp(14px, 3.8vw, 18px);
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        line-height: 1.25;
+        text-align: left;
+        padding: 8px 12px;
+        border-left: 3px solid #f2b84b;
+        border-radius: 2px;
+        background: rgba(0, 0, 0, 0.35);
+        -webkit-backdrop-filter: blur(2px);
+        backdrop-filter: blur(2px);
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        animation: mobileTitleReveal 0.55s ease-out both;
       }
 
       #hamburger {
