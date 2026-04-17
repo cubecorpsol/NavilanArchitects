@@ -11,11 +11,25 @@
     body {
       margin: 0;
       padding: 0;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
       color: white;
       font-family: sans-serif;
       text-shadow: 1px 1px 4px black;
       overflow-x: hidden;
       overflow-y: auto;
+    }
+
+    #mobilecenter {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px 16px;
+      box-sizing: border-box;
     }
 
     .slideshow {
@@ -57,10 +71,9 @@
     }
 
     #fpinfo {
-      margin-top: 17%;
-      margin-left: 35px;
+      margin: 0;
       color: #F0F8FF;
-      text-align: left;
+      text-align: center;
     }
 
     #fpinfo img {
@@ -69,8 +82,7 @@
     }
 
     #work {
-      margin-left: 35px;
-      margin-top: 12%;
+      margin-top: 24px;
       height: 25px;
       width: 200px;
       background: #F0F8FF;
@@ -83,9 +95,9 @@
 
     #fpicon {
       margin-top: 20px;
-      margin-left: 35px;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
     }
 
@@ -97,8 +109,7 @@
     /* Mobile-specific styles */
     @media (max-width: 768px) {
       #fpinfo {
-        margin-top: 10%;
-        margin-left: 20px;
+        margin-top: 0;
         font-size: 14px;
       }
 
@@ -108,7 +119,6 @@
       }
 
       #work {
-        margin-left: 20px;
         margin-top: 20px; /* Reduced space between fpinfo and fpicon */
         height: 40px;
         width: 160px;
@@ -116,7 +126,6 @@
       }
 
       #fpicon {
-        margin-left: 20px;
         margin-top: 30px;
         gap: 8px;
       }
@@ -125,11 +134,15 @@
         width: 30px;
         height: 30px;
       }
+
+      #mobilecenter {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 480px) {
       #fpinfo {
-        margin-top: 8%;
+        margin-top: 0;
         font-size: 12px;
       }
 
@@ -143,12 +156,10 @@
         height: 36px;
         font-size: 13px;
         margin-top: 20px; /* Reduced gap */
-        margin-left: 20px;
       }
 
       #fpicon {
         margin-top: 35px;
-        margin-left: 20px;
       }
 
       #fpicon svg {
@@ -159,10 +170,10 @@
       #mobilecenter {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
-        min-height: 100svh;
-        padding-left: 20px;
+        min-height: auto;
+        padding: 16px;
         box-sizing: border-box;
       }
     }
@@ -179,7 +190,7 @@
   <div id="mobilecenter">
     <div id="fpinfo">
       <img loading="eager" fetchpriority="high" decoding="async" src="logo.webp" alt="Logo" />
-      <p>ARCHITECTURE | INTERIOR | RESEARCH</p>
+      <p>ARCHITECTURE | INTERIOR | PROJECT WORKS</p>
       <p>ERODE | COIMBATORE</p>
     </div>
 
@@ -255,27 +266,6 @@
       }
     })();
   </script>
-
-  <footer class="site-footer">
-    <div class="site-footer__inner">
-      <img loading="lazy" decoding="async" class="site-footer__logo" src="logoblack.webp" alt="Navilan logo" />
-      <p class="site-footer__copyright">Ⓒ Copyright 2025 Navilan. All rights reserved.</p>
-      <div class="site-footer__social">
-        <a href="mailto:info@navilanarchitects.com" aria-label="Email Navilan">
-          <img loading="lazy" decoding="async" src="email.webp" width="30" height="30" alt="Email" />
-        </a>
-        <a href="https://www.facebook.com/" aria-label="Navilan on Facebook">
-          <img loading="lazy" decoding="async" src="facebook.webp" width="30" height="30" alt="Facebook" />
-        </a>
-        <a href="https://www.instagram.com/" aria-label="Navilan on Instagram">
-          <img loading="lazy" decoding="async" src="instagram.webp" width="30" height="30" alt="Instagram" />
-        </a>
-        <a href="https://www.linkedin.com/" aria-label="Navilan on LinkedIn">
-          <img loading="lazy" decoding="async" src="linkedin.webp" width="35" height="35" alt="LinkedIn" />
-        </a>
-      </div>
-      <p class="site-footer__credit">Developed by <a href="https://www.cubecorpsol.com/">Cube Corpsol</a></p>
-    </div>
-  </footer>
 </body>
 </html>
+
